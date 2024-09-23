@@ -1,7 +1,14 @@
 import { API_KEY } from "./constants";
+import { load } from "./storage/load";
 
 export function headers(hasBody = false) {
   const headers = new Headers();
+
+  const token = load("token");
+
+  if (token) {
+    headers.append("Authorization", `Bearer ${token}`);
+  }
 
   if (API_KEY) {
     headers.append("X-Noroff-API-Key", API_KEY);
