@@ -1,4 +1,5 @@
 import { register } from "../../api/auth/register";
+import { displayMessage } from "../global/displayMessage";
 
 export async function onRegister(event) {
     event.preventDefault();
@@ -6,5 +7,10 @@ export async function onRegister(event) {
     const formData = new FormData(form);
     const account = Object.fromEntries(formData.entries());
 
-    register(account); 
+    try {
+        await register(account); 
+        displayMessage("You have registered an account!", "success");
+    } catch (error) {
+        displayMessage(error.message, "error");
+    }
 }
