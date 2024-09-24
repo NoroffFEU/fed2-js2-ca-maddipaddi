@@ -1,4 +1,3 @@
-import { displayMessage } from "../../ui/global/displayMessage";
 import { handleErrors } from "../../utilities/handleErrors";
 import { authFetch } from "../authFetch";
 import { API_AUTH_LOGIN } from "../constants";
