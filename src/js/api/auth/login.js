@@ -5,7 +5,7 @@ import { API_AUTH_LOGIN } from "../constants";
 import { save } from "../storage/save";
 
 export async function login({ email, password }) {
-    try {
+ 
         const response = await authFetch(API_AUTH_LOGIN, {
             method: "POST",
             body: JSON.stringify({email, password})
@@ -19,9 +19,5 @@ export async function login({ email, password }) {
             } else {
                 handleErrors(response);
             }
-          
-    } catch (error) {
-        displayMessage(error.message, "error");
-    }
 }
  
