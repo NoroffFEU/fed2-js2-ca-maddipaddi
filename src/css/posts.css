@@ -1,4 +1,6 @@
-#posts-container {
+#posts-container,
+#post-container,
+#user-posts {
   margin: 0 auto;
   max-width: 60%;
   display: grid;
