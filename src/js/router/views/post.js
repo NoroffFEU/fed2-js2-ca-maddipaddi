@@ -1,1 +1,4 @@
-alert("Single Post Page");
+import { renderPost } from "../../ui/post/read";
+
+
+renderPost();
