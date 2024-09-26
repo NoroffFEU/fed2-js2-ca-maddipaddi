@@ -1,7 +1,6 @@
 import { API_AUTH_REGISTER } from "../constants";
 import { authFetch } from "../authFetch";
 import { handleErrors } from "../../utilities/handleErrors";
-import { displayMessage } from "../../ui/global/displayMessage";
 
 export async function register({
   name,
