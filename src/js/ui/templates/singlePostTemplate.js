@@ -1,3 +1,4 @@
+import { appendDeleteButton } from "../../utilities/appendDeleteButton";
 import { appendEditLink } from "../../utilities/appendEditLink";
 
 export function singlePostTemplate(post) {
@@ -32,7 +33,7 @@ export function singlePostTemplate(post) {
         const tags = document.createElement("p");
         tags.innerText = post.tags; 
 
-        postElement.append(title, body, tags, appendEditLink(post, post.author.name));
+        postElement.append(title, body, tags, appendEditLink(post, post.author.name), appendDeleteButton(post, post.author.name));
 
         return postElement;
 }

@@ -1,3 +1,4 @@
+import { appendDeleteButton } from "../../utilities/appendDeleteButton";
 import { appendEditLink } from "../../utilities/appendEditLink";
 
 export function postsTemplate(posts) {
@@ -39,7 +40,7 @@ export function postsTemplate(posts) {
         clickableThumbnail.append(title, body, tags);
 
         
-        postElement.append(clickableThumbnail, appendEditLink(post, post.author.name));
+        postElement.append(clickableThumbnail, appendEditLink(post, post.author.name), appendDeleteButton(post, post.author.name));
       
         
         return postElement;
