@@ -7,10 +7,25 @@ export async function onRegister(event) {
     const formData = new FormData(form);
     const account = Object.fromEntries(formData.entries());
 
+    const resetRegisterPage = () => {
+        const content = document.getElementById("register-page-content");
+        content.innerHTML = "";
+
+        displayMessage("You have registered an account!", "success");
+
+        const loginLink = document.createElement("a");
+        loginLink.setAttribute("href", "/auth/login/");
+        loginLink.classList.add("button");
+        loginLink.innerText = "Log in";
+
+        content.appendChild(loginLink);
+    }
+
     try {
         await register(account); 
-        displayMessage("You have registered an account!", "success");
     } catch (error) {
         displayMessage(error.message, "error");
     }
+
+    resetRegisterPage();
 }
