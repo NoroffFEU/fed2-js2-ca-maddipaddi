@@ -7,7 +7,11 @@ export function displayMessage(message, type) {
     const messageContainer = document.createElement("div");
     //remember type is added for styling, if styling not implemented, remove later
     messageContainer.classList.add("message", type);
-    messageContainer.innerText = message;
+
+    const messageText = document.createElement("p");
+    messageText.innerText = message;
+
+    messageContainer.appendChild(messageText);
 
     document.body.appendChild(messageContainer);
 }
