@@ -19,8 +19,8 @@ export async function populateForm() {
     const post = await readPost(id);
     
     document.getElementById("title").value = post.title;
-    document.getElementById("mediaURL").value = post.media.url;
-    document.getElementById("mediaALT").value = post.media.alt;
     document.getElementById("body").value = post.body;
     document.getElementById("tags").value = post.tags;
+    document.getElementById("mediaURL").value = post.media.url;
+    document.getElementById("mediaALT").value = post.media.alt;
 }
