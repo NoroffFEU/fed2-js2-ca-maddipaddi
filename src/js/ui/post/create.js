@@ -21,6 +21,9 @@ export async function onCreatePost(event) {
 
     try {
         await createPost(postData); 
+        setTimeout(() => {
+            window.location.reload();
+        }, 2000); 
     } catch (error) {
         displayMessage(error.message, "error");
     }
