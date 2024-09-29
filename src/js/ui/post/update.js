@@ -3,6 +3,19 @@ import { findPostID } from "../../utilities/findPostID";
 import { setMediaObject } from "../../utilities/setMediaObject";
 import { stringToArray } from "../../utilities/stringToArray";
 
+/**
+ * Handles the update post form submission, collects user input, and updates the post.
+ * 
+ * @async
+ * @function onUpdatePost
+ * @param {Event} event - The form submission event.
+ * @returns {Promise<void>} Nothing is returned, but the post is updated.
+ * @throws {Error} Will throw an error if the post update fails.
+ * 
+ * @example
+ * const updateForm = document.getElementById("update-form");
+ * updateForm.addEventListener("submit", onUpdatePost);
+ */
 export async function onUpdatePost(event) {
     event.preventDefault();
         const form = event.target;

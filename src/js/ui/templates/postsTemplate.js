@@ -1,6 +1,21 @@
 import { appendDeleteButton } from "../../utilities/appendDeleteButton";
 import { appendEditLink } from "../../utilities/appendEditLink";
 
+/**
+ * Creates an array of post elements from an array of post data.
+ * Each post element includes the post title, body, tags, and media (if available).
+ * 
+ * @function postsTemplate
+ * @param {Array<Object>} posts - An array of post objects to render.
+ * @returns {Array<Element>} An array of post elements created from the post data.
+ * 
+ * @example
+ * const posts = [
+ *   { id: 1, title: "Where is my dog??", body: "You have made a grave mistake.", tags: ["dead"], author: { name: "John" } }
+ * ];
+ * const postElements = postsTemplate(posts);
+ * postElements.forEach(postElement => document.body.appendChild(postElement));
+ */
 export function postsTemplate(posts) {
     return posts.map(post => {
         const postElement = document.createElement("div");
