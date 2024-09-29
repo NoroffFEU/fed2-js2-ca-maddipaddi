@@ -1,0 +1,15 @@
+#posts-container,
+#post-container,
+#user-posts {
+  margin: 0 auto;
+  max-width: 60%;
+  display: grid;
+  gap: 1rem;
+}
+
+.post-element {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 1px solid blue;
+}
