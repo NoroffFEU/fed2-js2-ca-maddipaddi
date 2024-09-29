@@ -10,6 +10,7 @@ export const appendDeleteButton = (post, author) => {
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "Delete";
     deleteButton.setAttribute("id", `${post.id}`);
+    deleteButton.classList.add("button", "delete");
     deleteButton.addEventListener("click", onDeletePost);
 
     return deleteButton;

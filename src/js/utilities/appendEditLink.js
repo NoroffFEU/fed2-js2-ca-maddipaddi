@@ -7,9 +7,10 @@ export const appendEditLink = (post, author) => {
 
    if (author === userName) {
     const editLink = document.createElement("a");
-    editLink.innerText = "edit";
+    editLink.innerText = "Edit";
     editLink.setAttribute("href", `/post/edit/?id=${post.id}`)
     editLink.setAttribute("id", "edit-link");
+    editLink.classList.add("button");
     return editLink;
    } else {
       return "";
