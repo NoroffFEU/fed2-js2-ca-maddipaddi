@@ -1,5 +1,6 @@
 import { register } from "../../api/auth/register";
 import { displayMessage } from "../global/displayMessage";
+import { hideSpinner, showSpinner } from "../global/spinner";
 
 export async function onRegister(event) {
     event.preventDefault();
@@ -22,9 +23,12 @@ export async function onRegister(event) {
     }
 
     try {
+        showSpinner();
         await register(account); 
     } catch (error) {
         displayMessage(error.message, "error");
+    } finally {
+        hideSpinner(); 
     }
 
     resetRegisterPage();

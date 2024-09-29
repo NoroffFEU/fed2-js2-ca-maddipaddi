@@ -1,5 +1,6 @@
 import { login } from "../../api/auth/login";
 import { displayMessage } from "../global/displayMessage";
+import { hideSpinner, showSpinner } from "../global/spinner";
 
 export async function onLogin(event) {
     event.preventDefault();
@@ -8,6 +9,7 @@ export async function onLogin(event) {
     const account = Object.fromEntries(formData.entries());
 
     try {
+        showSpinner();
         await login(account); 
         displayMessage("Login successful!", "success");
         setTimeout(() => {
@@ -15,5 +17,7 @@ export async function onLogin(event) {
         }, 2000); 
     } catch (error) {
         displayMessage(error.message, "error");
+    } finally {
+        hideSpinner();
     }
 } 
