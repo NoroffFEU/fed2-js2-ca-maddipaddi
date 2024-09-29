@@ -7,14 +7,18 @@
     <script type="module" src="/src/app.js"></script>
   </head>
   <body>
-    <div class="logo">
-      <img src="/images/noroff-logo.png" alt="Noroff Logo" />
-    </div>
-    <h1>Home</h1>
-    <a href="/profile/">My Profile</a>
-    <a href="/auth/login/">Login</a>
-    <a href="/auth/register/">Register</a>
-    <button id="logout">Logout</button>
-    <div id="posts-container"></div>
+    <header>
+      <div class="logo">
+        <img src="/images/noroff-logo.png" alt="Noroff Logo" />
+      </div>
+      <h1>Home</h1>
+      <a href="/profile/">My Profile</a>
+      <a href="/auth/login/">Login</a>
+      <a href="/auth/register/">Register</a>
+      <button id="logout" class="button">Logout</button>
+    </header>
+    <main>
+      <div id="posts-container"></div>
+    </main>
   </body>
 </html>
