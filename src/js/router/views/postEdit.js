@@ -2,10 +2,13 @@ import { onUpdatePost } from "../../ui/post/update";
 import { authGuard } from "../../utilities/authGuard";
 import { populateForm } from "../../utilities/populatePostFormToEdit";
 
-authGuard();
+function init() {
+    authGuard();
 
-populateForm();
+    populateForm();
+    
+    const form = document.forms.editPost;
+    form.addEventListener("submit", onUpdatePost);
+}
 
-const form = document.forms.editPost;
-
-form.addEventListener("submit", onUpdatePost);
+init();
