@@ -11,3 +11,14 @@ img {
 .logo {
   max-width: 8rem;
 }
+
+body {
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+}
+
+form {
+  display: grid;
+  gap: 0.5rem;
+}
