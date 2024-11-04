@@ -1,20 +1,23 @@
-import { defineConfig } from 'eslint-define-config';
+import globals from "globals";
+import prettier from "eslint-config-prettier";
+import prettierPlugin from "eslint-plugin-prettier";
 
-export default defineConfig({
-  parserOptions: {
-    ecmaVersion: 'latest', 
-    sourceType: 'module',
+export default [
+  {
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: "module",
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+    plugins: {
+      prettier: prettierPlugin,
+    },
+    rules: {
+      ...prettier.rules,
+      "prettier/prettier": "warn",
+    },
   },
-  env: {
-    browser: true,
-    node: true,
-    es6: true,
-  },
-  extends: [
-    'eslint:recommended',
-    'plugin:prettier/recommended',
-  ],
-  rules: {
-   
-  },
-});
+];
