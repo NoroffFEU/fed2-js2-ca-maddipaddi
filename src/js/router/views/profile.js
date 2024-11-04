@@ -4,10 +4,10 @@ import { profileTemplate } from "../../ui/templates/profileTemplate";
 import { authGuard } from "../../utilities/authGuard";
 
 function init() {
-    authGuard();
-    profileTemplate();
-    renderPostsByUser();
-    setLogoutListener();   
-} 
+  authGuard();
+  profileTemplate();
+  renderPostsByUser();
+  setLogoutListener();
+}
 
 init();
