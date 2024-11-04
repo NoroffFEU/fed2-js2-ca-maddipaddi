@@ -58,7 +58,7 @@ export function singlePostTemplate(post) {
     body,
     tags,
     appendEditLink(post, post.author.name),
-    appendDeleteButton(post, post.author.name),
+    appendDeleteButton(post, post.author.name)
   );
 
   return postElement;

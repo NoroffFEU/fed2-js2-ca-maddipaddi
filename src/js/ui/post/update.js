@@ -25,7 +25,7 @@ export async function onUpdatePost(event) {
   const tagsAsArray = stringToArray(formValues.tags);
   const mediaAsObject = setMediaObject(
     formValues.mediaURL,
-    formValues.mediaALT,
+    formValues.mediaALT
   );
 
   const id = findPostID();

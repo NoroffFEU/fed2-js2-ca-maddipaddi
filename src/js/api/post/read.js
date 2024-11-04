@@ -34,7 +34,7 @@ export async function readPost(id, includeAuthor = true) {
     });
 
     const response = await authFetch(
-      `${API_SOCIAL_POSTS}/${id}?${queryParams.toString()}`,
+      `${API_SOCIAL_POSTS}/${id}?${queryParams.toString()}`
     );
 
     await handleErrors(response);
@@ -69,7 +69,7 @@ export async function readPosts(
   limit = 12,
   page = 1,
   tag,
-  includeAuthor = true,
+  includeAuthor = true
 ) {
   try {
     showSpinner();
@@ -85,7 +85,7 @@ export async function readPosts(
     }
 
     const response = await authFetch(
-      `${API_SOCIAL_POSTS}?${queryParams.toString()}`,
+      `${API_SOCIAL_POSTS}?${queryParams.toString()}`
     );
 
     await handleErrors(response);
@@ -94,7 +94,7 @@ export async function readPosts(
     const posts = result.data;
 
     const sortedPosts = posts.sort(
-      (a, b) => new Date(b.created) - new Date(a.created),
+      (a, b) => new Date(b.created) - new Date(a.created)
     );
     return sortedPosts;
   } catch (error) {
@@ -129,7 +129,7 @@ export async function readPostsByUser(
   limit = 12,
   page = 1,
   tag,
-  includeAuthor = true,
+  includeAuthor = true
 ) {
   try {
     showSpinner();
@@ -145,7 +145,7 @@ export async function readPostsByUser(
     }
 
     const response = await authFetch(
-      `${API_SOCIAL_PROFILES}/${username}/posts?${queryParams.toString()}`,
+      `${API_SOCIAL_PROFILES}/${username}/posts?${queryParams.toString()}`
     );
 
     await handleErrors(response);
@@ -154,7 +154,7 @@ export async function readPostsByUser(
     const posts = result.data;
 
     const sortedPosts = posts.sort(
-      (a, b) => new Date(b.created) - new Date(a.created),
+      (a, b) => new Date(b.created) - new Date(a.created)
     );
     return sortedPosts;
   } catch (error) {

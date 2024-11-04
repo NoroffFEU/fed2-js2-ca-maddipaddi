@@ -54,7 +54,7 @@ export function postsTemplate(posts) {
     postElement.append(
       clickableThumbnail,
       appendEditLink(post, post.author.name),
-      appendDeleteButton(post, post.author.name),
+      appendDeleteButton(post, post.author.name)
     );
 
     return postElement;

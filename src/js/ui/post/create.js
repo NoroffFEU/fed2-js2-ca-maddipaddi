@@ -26,7 +26,7 @@ export async function onCreatePost(event) {
   const tagsAsArray = stringToArray(formValues.tags);
   const mediaAsObject = setMediaObject(
     formValues.mediaURL,
-    formValues.mediaALT,
+    formValues.mediaALT
   );
 
   const postData = {
