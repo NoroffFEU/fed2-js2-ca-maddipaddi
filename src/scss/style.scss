@@ -1,7 +1,8 @@
 @import "bootstrap/scss/bootstrap";
 @import "_reset";
-@import "global";
+@import "_variables";
+@import "_global";
 @import "loading-spinner";
 @import "display-message";
-@import "buttons";
+@import "_buttons";
 @import "posts";
