@@ -1,0 +1,10 @@
+@import "_variables";
+
+.btn-light-theme {
+  color: $graphite-grey;
+  background-color: $soft-steel-blue;
+
+  &:hover {
+    background-color: $cool-lavender;
+  }
+}
