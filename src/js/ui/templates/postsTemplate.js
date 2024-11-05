@@ -26,7 +26,6 @@ export function postsTemplate(posts) {
 
     const user = document.createElement("p");
     user.innerText = `Posted by: ${post.author.name}`;
-    clickableThumbnail.appendChild(user);
 
     const title = document.createElement("h2");
     title.innerText = post.title;
@@ -40,7 +39,6 @@ export function postsTemplate(posts) {
       media.setAttribute("alt", post.media.alt || "Post image");
 
       mediaContainer.appendChild(media);
-      clickableThumbnail.appendChild(mediaContainer);
     }
 
     const body = document.createElement("p");
@@ -49,10 +47,13 @@ export function postsTemplate(posts) {
     const tags = document.createElement("p");
     tags.innerText = post.tags;
 
-    clickableThumbnail.append(title, body, tags);
+    clickableThumbnail.append(title, mediaContainer);
 
     postElement.append(
+      user,
       clickableThumbnail,
+      body,
+      tags,
       appendEditLink(post, post.author.name),
       appendDeleteButton(post, post.author.name)
     );
