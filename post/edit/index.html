@@ -9,10 +9,43 @@
   </head>
 
   <body>
+    <div id="loading-spinner" class="spinner"></div>
     <h1>Edit Post</h1>
 
     <form name="editPost">
-      <button>Edit Post</button>
+      <div>
+        <label for="title">Title</label>
+        <input id="title" type="text" name="title" required minlength="2" />
+      </div>
+      <div>
+        <label for="body">Body</label>
+        <textarea name="body" id="body"></textarea>
+      </div>
+      <div>
+        <label for="mediaURL">Image</label>
+        <input
+          type="url"
+          name="mediaURL"
+          id="mediaURL"
+          placeholder="Type url here..."
+        />
+        <input
+          type="text"
+          name="mediaALT"
+          id="mediaALT"
+          placeholder="Describe the image here..."
+        />
+      </div>
+      <div>
+        <label for="tags">Tags</label>
+        <input
+          type="text"
+          name="tags"
+          id="tags"
+          placeholder="Separate tags by a comma. Example: tag1, tag2"
+        />
+      </div>
+      <button class="button">Edit Post</button>
     </form>
   </body>
 </html>

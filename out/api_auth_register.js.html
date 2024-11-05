@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>JSDoc: Source: api/auth/register.js</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="styles/prettify-tomorrow.css"
+    />
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css" />
+  </head>
+
+  <body>
+    <div id="main">
+      <h1 class="page-title">Source: api/auth/register.js</h1>
+
+      <section>
+        <article>
+          <pre
+            class="prettyprint source linenums"
+          ><code>import { API_AUTH_REGISTER } from "../constants";
+import { authFetch } from "../authFetch";
+import { handleErrors } from "../../utilities/handleErrors";
+
+
+/**
+ * Registers a new user by sending the provided details to the API.
+ * 
+ * @async
+ * @function register
+ * @param {Object} userDetails - The user's registration details.
+ * @param {string} userDetails.name - The user's name.
+ * @param {string} userDetails.email - The user's email address.
+ * @param {string} userDetails.password - The user's password.
+ * @param {string} [userDetails.bio] - The user's bio (optional).
+ * @param {string} [userDetails.banner] - The user's banner image URL (optional).
+ * @param {string} [userDetails.avatar] - The user's avatar image URL (optional).
+ * @returns {Promise&lt;Object>} The API response containing user data if registration is successful.
+ * @throws {Error} Will throw an error if the API request fails or the response is invalid.
+ * 
+ * @example
+ * const newUser = {
+ *   name: "John Wick",
+ *   email: "johnwick@noroff.no",
+ *   password: "password123",
+ *   bio: "Semi-retired assassin",
+ *   banner: "https://example.com/banner.jpg",
+ *   avatar: "https://example.com/avatar.jpg"
+ * };
+ * 
+ * register(newUser)
+ *   .then(data => console.log('User registered:', data))
+ *   .catch(error => console.error('Registration failed:', error.message));
+ */
+export async function register({
+  name,
+  email,
+  password,
+  bio,
+  banner,
+  avatar,
+}) {
+    const response = await authFetch(API_AUTH_REGISTER, {
+    method: "POST",
+    body: JSON.stringify({name, email, password, bio, banner, avatar})
+    });
+  
+      if (response.ok) {
+      return await response.json();
+      } else {
+      handleErrors();
+      }
+}
+</code></pre>
+        </article>
+      </section>
+    </div>
+
+    <nav>
+      <h2><a href="index.html">Home</a></h2>
+      <h3>Global</h3>
+      <ul>
+        <li><a href="global.html#appendDeleteButton">appendDeleteButton</a></li>
+        <li><a href="global.html#appendEditLink">appendEditLink</a></li>
+        <li><a href="global.html#authFetch">authFetch</a></li>
+        <li><a href="global.html#authGuard">authGuard</a></li>
+        <li><a href="global.html#createPost">createPost</a></li>
+        <li><a href="global.html#deletePost">deletePost</a></li>
+        <li><a href="global.html#displayMessage">displayMessage</a></li>
+        <li><a href="global.html#findPostID">findPostID</a></li>
+        <li><a href="global.html#handleErrors">handleErrors</a></li>
+        <li><a href="global.html#headers">headers</a></li>
+        <li><a href="global.html#hideSpinner">hideSpinner</a></li>
+        <li><a href="global.html#load">load</a></li>
+        <li><a href="global.html#login">login</a></li>
+        <li><a href="global.html#onCreatePost">onCreatePost</a></li>
+        <li><a href="global.html#onDeletePost">onDeletePost</a></li>
+        <li><a href="global.html#onLogin">onLogin</a></li>
+        <li><a href="global.html#onLogout">onLogout</a></li>
+        <li><a href="global.html#onRegister">onRegister</a></li>
+        <li><a href="global.html#onUpdatePost">onUpdatePost</a></li>
+        <li><a href="global.html#populateForm">populateForm</a></li>
+        <li><a href="global.html#postsTemplate">postsTemplate</a></li>
+        <li><a href="global.html#profileTemplate">profileTemplate</a></li>
+        <li><a href="global.html#readPost">readPost</a></li>
+        <li><a href="global.html#readPosts">readPosts</a></li>
+        <li><a href="global.html#readPostsByUser">readPostsByUser</a></li>
+        <li>
+          <a href="global.html#redirectAfterDeletion">redirectAfterDeletion</a>
+        </li>
+        <li><a href="global.html#register">register</a></li>
+        <li><a href="global.html#remove">remove</a></li>
+        <li><a href="global.html#renderPost">renderPost</a></li>
+        <li><a href="global.html#renderPosts">renderPosts</a></li>
+        <li><a href="global.html#renderPostsByUser">renderPostsByUser</a></li>
+        <li><a href="global.html#save">save</a></li>
+        <li><a href="global.html#setLogoutListener">setLogoutListener</a></li>
+        <li><a href="global.html#setMediaObject">setMediaObject</a></li>
+        <li><a href="global.html#showSpinner">showSpinner</a></li>
+        <li><a href="global.html#singlePostTemplate">singlePostTemplate</a></li>
+        <li><a href="global.html#stringToArray">stringToArray</a></li>
+        <li><a href="global.html#updatePost">updatePost</a></li>
+      </ul>
+    </nav>
+
+    <br class="clear" />
+
+    <footer>
+      Documentation generated by
+      <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Sun Sep 29
+      2024 22:07:48 GMT+0200 (Central European Summer Time)
+    </footer>
+
+    <script>
+      prettyPrint();
+    </script>
+    <script src="scripts/linenumber.js"></script>
+  </body>
+</html>

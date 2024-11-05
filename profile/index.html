@@ -8,10 +8,18 @@
     <script type="module" src="/src/app.js"></script>
   </head>
   <body>
-    <h1>Profile</h1>
-
-    <form name="updateProfile">
-      <button>Update Profile</button>
-    </form>
+    <header>
+      <div id="loading-spinner" class="spinner"></div>
+      <h1>Profile</h1>
+      <a href="/post/create/" class="button">Create post</a>
+      <form name="updateProfile">
+        <button class="button">Update Profile</button>
+      </form>
+      <button id="logout" class="button">Logout</button>
+      <div id="profile-container"></div>
+    </header>
+    <main>
+      <div id="user-posts"></div>
+    </main>
   </body>
 </html>

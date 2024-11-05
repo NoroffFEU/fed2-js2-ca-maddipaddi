@@ -1,8 +1,11 @@
 import { onCreatePost } from "../../ui/post/create";
 import { authGuard } from "../../utilities/authGuard";
 
-authGuard();
+function init() {
+  authGuard();
 
-const form = document.forms.createPost;
+  const form = document.forms.createPost;
+  form.addEventListener("submit", onCreatePost);
+}
 
-form.addEventListener("submit", onCreatePost);
+init();
