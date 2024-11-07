@@ -1,5 +1,6 @@
 import { appendDeleteButton } from "../../utilities/appendDeleteButton";
 import { appendEditLink } from "../../utilities/appendEditLink";
+import { formatTags } from "../../utilities/formatTags";
 
 /**
  * Creates an array of post elements from an array of post data.
@@ -19,7 +20,7 @@ import { appendEditLink } from "../../utilities/appendEditLink";
 export function postsTemplate(posts) {
   return posts.map((post) => {
     const postElement = document.createElement("div");
-    postElement.classList.add("post-element");
+    postElement.classList.add("card-custom");
 
     const clickableThumbnail = document.createElement("a");
     clickableThumbnail.setAttribute("href", `/post/?id=${post.id}`);
@@ -29,6 +30,7 @@ export function postsTemplate(posts) {
 
     const title = document.createElement("h2");
     title.innerText = post.title;
+    title.classList.add("card-title");
 
     let mediaContainer;
 
@@ -37,6 +39,7 @@ export function postsTemplate(posts) {
       const media = document.createElement("img");
       media.setAttribute("src", post.media.url);
       media.setAttribute("alt", post.media.alt || "Post image");
+      media.classList.add("card-img");
 
       mediaContainer.appendChild(media);
     }
@@ -44,8 +47,14 @@ export function postsTemplate(posts) {
     const body = document.createElement("p");
     body.innerText = post.body;
 
-    const tags = document.createElement("p");
-    tags.innerText = post.tags;
+    const tagsContainer = document.createElement("div");
+    tagsContainer.classList.add("tagsContainer");
+    const tags = post.tags;
+    const formattedTags = formatTags(tags);
+
+    formattedTags.forEach((tagElement) => {
+      tagsContainer.appendChild(tagElement);
+    });
 
     clickableThumbnail.append(title, mediaContainer);
 
@@ -53,7 +62,7 @@ export function postsTemplate(posts) {
       user,
       clickableThumbnail,
       body,
-      tags,
+      tagsContainer,
       appendEditLink(post, post.author.name),
       appendDeleteButton(post, post.author.name)
     );

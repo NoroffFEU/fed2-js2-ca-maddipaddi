@@ -1,0 +1,12 @@
+@import "/src/scss/common/variables";
+
+.tagsContainer {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.tags {
+  background-color: $soft-steel-blue;
+  max-width: fit-content;
+  padding: 0.25rem 0.5rem;
+}
