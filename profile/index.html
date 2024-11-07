@@ -86,7 +86,7 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main class="mt-5 pt-5">
       <div id="loading-spinner" class="spinner"></div>
       <h1>Profile</h1>
       <a href="/post/create/" class="button">Create post</a>
@@ -95,7 +95,14 @@
       </form>
       <button id="logout" class="button">Logout</button>
       <div id="profile-container"></div>
-      <div id="user-posts"></div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div
+            id="user-posts"
+            class="col-12 col-md-10 col-lg-8 postfeed p-5"
+          ></div>
+        </div>
+      </div>
     </main>
   </body>
 </html>

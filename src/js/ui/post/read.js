@@ -71,6 +71,11 @@ export async function renderPostsByUser() {
   const postElements = postsTemplate(posts);
 
   postElements.forEach((postElement) => {
-    postsContainer.appendChild(postElement);
+    const card = document.createElement("div");
+    card.className = "card-custom";
+
+    card.appendChild(postElement);
+
+    postsContainer.appendChild(card);
   });
 }
