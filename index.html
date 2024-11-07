@@ -7,70 +7,85 @@
     <script type="module" src="/src/app.js"></script>
   </head>
   <body>
-    <header class="p-3 mb-3 border-bottom">
-      <div class="container">
-        <div
-          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
-        >
-          <a
-            href="/"
-            class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-body-emphasis text-decoration-none"
-          >
-            <img src="assets/logo-light-text.png" alt="logo-light" />
-          </a>
-          <ul
-            class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
-          >
-            <li><a href="/" class="nav-link active">Home</a></li>
-            <li>
-              <a href="/auth/login/" class="nav-link link-body-emphasis"
-                >Login</a
-              >
-            </li>
-            <li>
-              <a href="/auth/register/" class="nav-link link-body-emphasis"
-                >Register</a
-              >
-            </li>
-          </ul>
-          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-            <input
-              type="search"
-              class="form-control"
-              placeholder="Search..."
-              aria-label="Search"
-            />
-          </form>
-          <div class="dropdown text-end">
-            <a
-              href="#"
-              class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img
-                src=""
-                alt="user"
-                width="32"
-                height="32"
-                class="rounded-circle"
-              />
+    <header>
+      <nav class="p-3 mb-3 border-bottom navbar navbar-expand-md fixed-top">
+        <div class="container-fluid">
+          <div class="logo-container me-3">
+            <a href="/" class="link-body-emphasis text-decoration-none">
+              <img src="assets/logo-light-text.png" alt="logo-light" />
             </a>
-            <ul class="dropdown-menu text-small">
-              <li><a class="dropdown-item" href="/profile/">Profile</a></li>
-              <li>
-                <a href="/post/create/" class="dropdown-item">Create post</a>
+          </div>
+          <button
+            class="navbar-toggler collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0 ms-3">
+              <li class="nav-item">
+                <a href="/" class="nav-link active">Home</a>
               </li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><button id="logout" class="dropdown-item">Logout</button></li>
+              <li class="nav-item">
+                <a href="/auth/login/" class="nav-link link-body-emphasis"
+                  >Login</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="/auth/register/" class="nav-link link-body-emphasis"
+                  >Register</a
+                >
+              </li>
             </ul>
+            <div class="dropdown text-end me-3">
+              <a
+                href="#"
+                class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src=""
+                  alt="user"
+                  width="32"
+                  height="32"
+                  class="rounded-circle"
+                />
+              </a>
+              <ul class="dropdown-menu text-small">
+                <li><a class="dropdown-item" href="/profile/">Profile</a></li>
+                <li>
+                  <a href="/post/create/" class="dropdown-item">Create post</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <button id="logout" class="dropdown-item">Logout</button>
+                </li>
+              </ul>
+            </div>
+            <form class="d-flex ms-3" role="search">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Search..."
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
           </div>
         </div>
-      </div>
+      </nav>
     </header>
     <main>
       <div class="container">
-        <div id="posts-container" class="col-8 postfeed justify-self-center">
+        <div id="posts-container" class="col-8 postfeed">
           <div id="loading-spinner" class="spinner"></div>
         </div>
       </div>
