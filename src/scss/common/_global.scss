@@ -1,8 +1,13 @@
-@import "_variables";
+@import "/src/scss/common/variables";
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+a {
+  color: $graphite-grey;
+  text-decoration: none;
 }
 
 body {

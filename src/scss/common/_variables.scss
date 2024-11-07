@@ -4,6 +4,7 @@
 $light-grey: #f2f2f2 !default;
 $off-white: #fafafa !default;
 $gray-gradient-start: #eaeaea !default;
+$gray-gradient-end: #acacac !default;
 
 // Accent colors
 $soft-steel-blue: #a1b5d8 !default;
@@ -35,3 +36,9 @@ $neon-green: #39ff14 !default;
 $electric-pink: #ff48c4 !default;
 $bright-yellow: #ffdd33 !default;
 $neon-purple: #bc13fe !default;
+
+//Box shadows
+
+$box-shadow-card-elements:
+  inset 0 -2px 5px rgba(0, 0, 0, 0.1),
+  0 2px 4px rgba(0, 0, 0, 0.1);

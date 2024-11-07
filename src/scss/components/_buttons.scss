@@ -1,0 +1,11 @@
+@import "/src/scss/common/variables";
+
+.btn-light-theme {
+  color: $graphite-grey;
+  background-color: $pale-blue-grey;
+
+  &:hover {
+    background-color: $pale-blue-grey;
+    border: solid 1px $graphite-grey;
+  }
+}

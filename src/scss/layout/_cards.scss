@@ -1,0 +1,23 @@
+@import "/src/scss/common/variables";
+
+.card-custom {
+  @extend .card;
+
+  background-color: $off-white;
+  border: 2px solid $cool-lavender;
+  box-shadow: $box-shadow-card-elements;
+  border-radius: 0.25rem;
+  padding: 1rem 4rem;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #fff;
+    box-shadow:
+      inset 0 -2px 5px rgba(0, 0, 0, 0.1),
+      0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.card-img {
+  border-radius: 0.25rem;
+}

@@ -1,0 +1,10 @@
+@import "/src/scss/common/variables";
+
+.postfeed {
+  background-color: $brushed-silver;
+  padding: 2rem 5rem;
+  margin: 2rem;
+  border-radius: 0.75rem;
+  display: grid;
+  gap: 3rem;
+}
