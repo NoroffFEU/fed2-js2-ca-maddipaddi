@@ -20,7 +20,7 @@ import { formatTags } from "../../utilities/formatTags";
 export function postsTemplate(posts) {
   return posts.map((post) => {
     const postElement = document.createElement("div");
-    postElement.classList.add("card-custom");
+    postElement.classList.add("card-body");
 
     const clickableThumbnail = document.createElement("a");
     clickableThumbnail.setAttribute("href", `/post/?id=${post.id}`);
