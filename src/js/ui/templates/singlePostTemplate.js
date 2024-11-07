@@ -27,7 +27,7 @@ import { formatTags } from "../../utilities/formatTags";
  */
 export function singlePostTemplate(post) {
   const postElement = document.createElement("div");
-  postElement.classList.add("card-custom");
+  postElement.classList.add("card-body");
 
   const user = document.createElement("p");
   user.innerText = `Posted by: ${post.author.name}`;

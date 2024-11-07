@@ -20,7 +20,11 @@ export async function renderPost() {
   const post = await readPost(id);
   const postElement = singlePostTemplate(post);
 
-  postContainer.appendChild(postElement);
+  const card = document.createElement("div");
+  card.className = "card-custom";
+  card.appendChild(postElement);
+
+  postContainer.appendChild(card);
 }
 
 /**
