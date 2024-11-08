@@ -36,6 +36,7 @@ export function postsTemplate(posts) {
 
     if (post.media && post.media.url) {
       mediaContainer = document.createElement("div");
+      mediaContainer.className = "image-container";
       const media = document.createElement("img");
       media.setAttribute("src", post.media.url);
       media.setAttribute("alt", post.media.alt || "Post image");
@@ -43,9 +44,6 @@ export function postsTemplate(posts) {
 
       mediaContainer.appendChild(media);
     }
-
-    const body = document.createElement("p");
-    body.innerText = post.body;
 
     const tagsContainer = document.createElement("div");
     tagsContainer.classList.add("tagsContainer");
@@ -61,7 +59,6 @@ export function postsTemplate(posts) {
     postElement.append(
       user,
       clickableThumbnail,
-      body,
       tagsContainer,
       appendEditLink(post, post.author.name),
       appendDeleteButton(post, post.author.name)

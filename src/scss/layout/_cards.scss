@@ -8,6 +8,10 @@
   box-shadow: $box-shadow-card-elements;
   border-radius: 0.25rem;
   transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 
   &:hover {
     background-color: #fff;
