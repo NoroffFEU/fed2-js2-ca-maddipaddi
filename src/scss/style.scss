@@ -2,11 +2,12 @@
 @import "/src/scss/common/reset";
 @import "/src/scss/common/variables";
 @import "/src/scss/common/global";
-@import "/src/scss/utilities/display-message.scss";
-@import "/src/scss/utilities/loading-spinner.scss";
+@import "/src/scss/utilities/display-message";
+@import "/src/scss/utilities/loading-spinner";
 @import "/src/scss/components/buttons";
 @import "/src/scss/components/logo";
 @import "/src/scss/components/tags";
 @import "/src/scss/layout/header";
 @import "/src/scss/layout/postfeed";
 @import "/src/scss/layout/cards";
+@import "/src/scss/layout/profile-banner";

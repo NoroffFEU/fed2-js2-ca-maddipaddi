@@ -88,13 +88,32 @@
     </header>
     <main class="mt-5 pt-5">
       <div id="loading-spinner" class="spinner"></div>
-      <h1>Profile</h1>
-      <a href="/post/create/" class="button">Create post</a>
-      <form name="updateProfile">
-        <button class="button">Update Profile</button>
-      </form>
-      <button id="logout" class="button">Logout</button>
-      <div id="profile-container"></div>
+      <div class="container my-5">
+        <div id="user-banner" class="p-3 text-center rounded-3">
+          <img
+            id="profile-image"
+            src=""
+            alt="User's profile image"
+            class="rounded-circle"
+          />
+          <div class="profile-info">
+            <div id="profile-container" class="text-body-emphasis"></div>
+            <p class="col-lg-8 mx-auto fs-5">
+              Imagine the bio text here. It can be long, it can be short. It can
+              be non-existent.
+            </p>
+          </div>
+          <div class="d-inline-flex gap-2 mb-5"></div>
+          <a
+            href="/post/create/"
+            class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill"
+            >Create post</a
+          >
+          <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill">
+            Update Profile
+          </button>
+        </div>
+      </div>
       <div class="container">
         <div class="row justify-content-center">
           <div
