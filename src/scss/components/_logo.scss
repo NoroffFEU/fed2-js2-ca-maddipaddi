@@ -1,3 +1,10 @@
+@import "../common/variables";
+
 .logo-container {
   max-width: 150px;
+}
+
+.logo-text-light {
+  color: $pale-blue-grey;
+  text-shadow: 0 2px 4px $gray-gradient-end;
 }

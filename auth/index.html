@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Glowlink - Login or Register |</title>
     <script type="module" src="/src/app.js"></script>
@@ -13,80 +12,192 @@
         <div class="container-fluid">
           <div class="logo-container me-3">
             <a href="/" class="link-body-emphasis text-decoration-none">
-              <img src="assets/logo-light-text.png" alt="logo-light" />
+              <img src="../assets/logo-light-text.png" alt="logo-light" />
             </a>
-          </div>
-          <button
-            class="navbar-toggler collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="navbar-collapse collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0 ms-3">
-              <li class="nav-item">
-                <a href="/" class="nav-link active">Home</a>
-              </li>
-              <li class="nav-item">
-                <a href="/auth/login/" class="nav-link link-body-emphasis"
-                  >Login</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="/auth/register/" class="nav-link link-body-emphasis"
-                  >Register</a
-                >
-              </li>
-            </ul>
-            <div class="dropdown text-end me-3">
-              <a
-                href="#"
-                class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                id="user-name"
-              >
-                <img
-                  id="user-image"
-                  src=""
-                  alt="user"
-                  width="32"
-                  height="32"
-                  class="rounded-circle"
-                />
-              </a>
-              <ul class="dropdown-menu text-small">
-                <li><a class="dropdown-item" href="/profile/">Profile</a></li>
-                <li>
-                  <a href="/post/create/" class="dropdown-item">Create post</a>
-                </li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <button id="logout" class="dropdown-item">Logout</button>
-                </li>
-              </ul>
-            </div>
-            <form class="d-flex ms-3" role="search">
-              <input
-                type="search"
-                class="form-control"
-                placeholder="Search..."
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
           </div>
         </div>
       </nav>
     </header>
-    <h1>Auth</h1>
-    <a href="./login/">Login</a> or <a href="./register/">Register</a>
+    <main class="mt-3 pt-3">
+      <div id="loading-spinner" class="spinner"></div>
+      <div class="card-custom">
+        <div class="px-4 py-5 my-5 text-center">
+          <img
+            class="d-block mx-auto mb-4 logo"
+            src="../assets/logo-light.png"
+            alt="Glowlink's logo"
+            width="72"
+            height="57"
+          />
+          <h1 class="display-5 fw-bold text-body-emphasis">
+            Log in or register to enter the social city
+            <span class="text-uppercase logo-text-light"
+              >Glo<span class="fst-italic">w</span>link</span
+            >
+          </h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">
+              Step into GlowLink, the futuristic social city that never sleeps.
+              Share your story, explore vibrant posts, and connect with a
+              community buzzing with energy—day and night. Log in or register
+              now to start your journey!
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              <button
+                type="button"
+                class="btn btn-primary btn-lg px-4 gap-3"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
+                Log in
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-lg px-4"
+                data-bs-toggle="modal"
+                data-bs-target="#registerModal"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="loginModal"
+        tabindex="-1"
+        aria-labelledby="loginModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="loginModalLabel">Log in</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form name="login" class="mb-3 d-flex flex-column gap-2">
+                <div>
+                  <label class="form-label" for="email">Email</label>
+                  <input
+                    class="form-control"
+                    id="email"
+                    type="email"
+                    name="email"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label class="form-label" for="password">Password</label>
+                  <input
+                    class="form-control"
+                    type="password"
+                    name="password"
+                    id="password"
+                    required
+                  />
+                </div>
+
+                <button class="button align-self-center">Login</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="registerModal"
+        tabindex="-1"
+        aria-labelledby="registerModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="registerModalLabel">Register</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div id="register-page-content">
+                <form name="register" class="mb-3 d-flex flex-column gap-2">
+                  <div>
+                    <label class="form-label" for="name">Name</label>
+                    <input
+                      class="form-control"
+                      id="name"
+                      type="text"
+                      name="name"
+                      required
+                      maxlength="20"
+                      pattern="^[\w]+$"
+                      title="Please enter a username using only letters and numbers"
+                    />
+                  </div>
+
+                  <div>
+                    <label class="form-label" for="register-email">Email</label>
+                    <input
+                      class="form-control"
+                      id="register-email"
+                      type="email"
+                      name="register-email"
+                      required
+                      pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                      title="Please enter a valid noroff.no or stud.noroff.no address"
+                    />
+                  </div>
+
+                  <div>
+                    <label class="form-label" for="register-password"
+                      >Password</label
+                    >
+                    <input
+                      class="form-control"
+                      type="password"
+                      name="register-password"
+                      id="register-password"
+                      required
+                      minlength="8"
+                    />
+                  </div>
+
+                  <button class="button">Register</button>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
