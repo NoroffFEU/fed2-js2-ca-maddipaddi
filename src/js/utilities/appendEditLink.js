@@ -22,10 +22,11 @@ export const appendEditLink = (post, author) => {
 
   if (author === userName) {
     const editLink = document.createElement("a");
+    editLink.className = "btn btn-light-theme m-1";
     editLink.innerText = "Edit";
     editLink.setAttribute("href", `/post/edit/?id=${post.id}`);
     editLink.setAttribute("id", "edit-link");
-    editLink.classList.add("button");
+
     return editLink;
   } else {
     return "";
