@@ -1,6 +1,6 @@
 /**
  * Protects a page by checking if the user is logged in.
- * If no token is found in localStorage, the user is redirected to the login page.
+ * If no token is found in localStorage, the user is redirected to the auth page.
  *
  * @function authGuard
  * @returns {void}
@@ -12,6 +12,6 @@
 export function authGuard() {
   if (!localStorage.token) {
     alert("You must be logged in to view this page");
-    window.location.href = "/auth/login/";
+    window.location.href = "/auth/";
   }
 }
