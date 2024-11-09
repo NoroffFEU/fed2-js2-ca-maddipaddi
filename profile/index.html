@@ -9,79 +9,103 @@
   </head>
   <body>
     <header>
-      <nav class="p-3 mb-3 border-bottom navbar navbar-expand-md fixed-top">
+      <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
           <div class="logo-container me-3">
             <a href="/" class="link-body-emphasis text-decoration-none">
-              <img src="../../assets/logo-light-text.png" alt="logo-light" />
+              <img src="../assets/logo-light-text.png" alt="logo-light" />
             </a>
           </div>
           <button
-            class="navbar-toggler collapsed"
+            class="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="navbar-collapse collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0 ms-3">
-              <li class="nav-item">
-                <a href="/" class="nav-link active">Home</a>
-              </li>
-              <li class="nav-item">
-                <a href="/auth/login/" class="nav-link link-body-emphasis"
-                  >Login</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="/auth/register/" class="nav-link link-body-emphasis"
-                  >Register</a
-                >
-              </li>
-            </ul>
-            <div class="dropdown text-end me-3">
-              <a
-                href="#"
-                class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                id="user-name"
-              >
-                <img
-                  id="user-image"
-                  src=""
-                  alt="user"
-                  width="32"
-                  height="32"
-                  class="rounded-circle"
-                />
-              </a>
-              <ul class="dropdown-menu text-small">
-                <li><a class="dropdown-item" href="/profile/">Profile</a></li>
-                <li>
-                  <a href="/post/create/" class="dropdown-item">Create post</a>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Explore</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a href="/" class="nav-link link-body-emphasis fs-5">Home</a>
                 </li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <button id="logout" class="dropdown-item">Logout</button>
+                <li class="nav-item">
+                  <a
+                    href="/auth/login/"
+                    class="nav-link link-body-emphasis fs-5"
+                    >Login</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="/auth/register/"
+                    class="nav-link link-body-emphasis fs-5"
+                    >Register</a
+                  >
+                </li>
+                <li class="nav-item dropdown fs-5">
+                  <a
+                    href="#"
+                    class="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    id="user-name"
+                  >
+                    <img
+                      id="user-image"
+                      src=""
+                      alt="user"
+                      width="32"
+                      height="32"
+                      class="rounded-circle"
+                    />
+                  </a>
+                  <ul class="dropdown-menu text-small">
+                    <li>
+                      <a class="dropdown-item" href="/profile/">Profile</a>
+                    </li>
+                    <li>
+                      <a href="/post/create/" class="dropdown-item"
+                        >Create post</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <button id="logout" class="dropdown-item">Logout</button>
+                    </li>
+                  </ul>
                 </li>
               </ul>
+              <form class="d-flex mt-3 mt-lg-0 me-3" role="search">
+                <input
+                  type="search"
+                  class="form-control me-2"
+                  placeholder="Search..."
+                  aria-label="Search"
+                />
+                <button class="btn btn-light-theme-outline" type="submit">
+                  Search
+                </button>
+              </form>
             </div>
-            <form class="d-flex ms-3" role="search">
-              <input
-                type="search"
-                class="form-control"
-                placeholder="Search..."
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
           </div>
         </div>
       </nav>
