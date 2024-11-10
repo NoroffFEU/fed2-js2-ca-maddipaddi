@@ -1,0 +1,10 @@
+@import "../common/variables";
+
+.logo-container {
+  max-width: 150px;
+}
+
+.logo-text-light {
+  color: var(--highlight-color-1);
+  text-shadow: 0 2px 4px var(--gradient-end);
+}

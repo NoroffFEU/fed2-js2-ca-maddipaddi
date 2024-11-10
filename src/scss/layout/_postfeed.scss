@@ -1,0 +1,8 @@
+@import "/src/scss/common/variables";
+
+.postfeed {
+  background-color: var(--bs-postfeed-bg);
+  border-radius: 0.75rem;
+  display: grid;
+  gap: 3rem;
+}

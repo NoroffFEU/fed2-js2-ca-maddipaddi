@@ -4,22 +4,156 @@
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
+    <title>Glowlink | Profile</title>
     <script type="module" src="/src/app.js"></script>
   </head>
   <body>
     <header>
-      <div id="loading-spinner" class="spinner"></div>
-      <h1>Profile</h1>
-      <a href="/post/create/" class="button">Create post</a>
-      <form name="updateProfile">
-        <button class="button">Update Profile</button>
-      </form>
-      <button id="logout" class="button">Logout</button>
-      <div id="profile-container"></div>
+      <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container-fluid">
+          <div class="logo-container me-3">
+            <a href="/" class="link-body-emphasis text-decoration-none">
+              <img id="logo" src="/assets/logo-light-text.png" alt="logo" />
+            </a>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Explore</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a href="/" class="nav-link link-body-emphasis fs-5">Posts</a>
+                </li>
+                <li class="nav-item dropdown fs-5">
+                  <a
+                    href="#"
+                    class="nav-link link-body-emphasis dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    id="user-name"
+                  >
+                    <img
+                      id="user-image"
+                      src=""
+                      alt="user"
+                      width="32"
+                      height="32"
+                      class="rounded-circle"
+                    />
+                  </a>
+                  <ul class="dropdown-menu text-small">
+                    <li>
+                      <a class="dropdown-item" href="/profile/">Profile</a>
+                    </li>
+                    <li>
+                      <a href="/post/create/" class="dropdown-item"
+                        >Create post</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <button id="logout" class="dropdown-item">Logout</button>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex mt-3 mt-lg-0 me-3" role="search">
+                <input
+                  type="search"
+                  class="form-control me-2"
+                  placeholder="Search..."
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-primary" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
-    <main>
-      <div id="user-posts"></div>
+    <main class="mt-5 pt-5">
+      <div id="loading-spinner" class="spinner"></div>
+      <div class="container my-5">
+        <div id="user-banner" class="p-3 text-center rounded-3">
+          <img
+            id="profile-image"
+            src=""
+            alt="User's profile image"
+            class="rounded-circle"
+          />
+          <div class="profile-info">
+            <div id="profile-container" class="text-body-emphasis"></div>
+            <p class="col-lg-8 mx-auto fs-5">
+              Imagine the bio text here. It can be long, it can be short. It can
+              be non-existent. It is not dynamic now, but will be later.
+            </p>
+          </div>
+          <div class="d-inline-flex gap-2 mb-5"></div>
+          <a
+            href="/post/create/"
+            class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 m-1"
+            >Create post</a
+          >
+          <button class="btn btn-primary btn-lg px-4 m-1">
+            Update Profile
+          </button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div
+            id="user-posts"
+            class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2"
+          ></div>
+        </div>
+      </div>
+      <div
+        class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+      >
+        <div class="form-check form-switch">
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="themeToggle"
+            autocomplete="off"
+          />
+          <label id="themeToggleLabel" class="btn btn-primary" for="themeToggle"
+            >Night</label
+          >
+        </div>
+      </div>
     </main>
+    <footer
+      class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+    >
+      <p class="col-md-4 mb-0 ms-3 text-body-secondary">
+        © 2024 Glowlink @maddipaddi
+      </p>
+    </footer>
   </body>
 </html>

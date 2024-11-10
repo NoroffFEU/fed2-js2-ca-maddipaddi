@@ -20,7 +20,11 @@ export async function renderPost() {
   const post = await readPost(id);
   const postElement = singlePostTemplate(post);
 
-  postContainer.appendChild(postElement);
+  const card = document.createElement("div");
+  card.className = "card-custom";
+  card.appendChild(postElement);
+
+  postContainer.appendChild(card);
 }
 
 /**
@@ -33,13 +37,18 @@ export async function renderPost() {
  *
  */
 export async function renderPosts() {
-  const postsContainer = document.getElementById("posts-container");
-
   const posts = await readPosts();
   const postElements = postsTemplate(posts);
 
+  const postsContainer = document.getElementById("posts-container");
+
   postElements.forEach((postElement) => {
-    postsContainer.appendChild(postElement);
+    const card = document.createElement("div");
+    card.className = "card-custom";
+
+    card.appendChild(postElement);
+
+    postsContainer.appendChild(card);
   });
 }
 
@@ -62,6 +71,15 @@ export async function renderPostsByUser() {
   const postElements = postsTemplate(posts);
 
   postElements.forEach((postElement) => {
-    postsContainer.appendChild(postElement);
+    const col = document.createElement("div");
+    col.className = "col";
+
+    const card = document.createElement("div");
+    card.className = "card-custom";
+
+    card.appendChild(postElement);
+    col.appendChild(card);
+
+    postsContainer.appendChild(col);
   });
 }

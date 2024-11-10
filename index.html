@@ -1,26 +1,135 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
+    <title>Glowlink | Home</title>
     <script type="module" src="/src/app.js"></script>
   </head>
   <body>
     <header>
-      <div id="loading-spinner" class="spinner"></div>
-      <div class="logo">
-        <img src="/images/noroff-logo.png" alt="Noroff Logo" />
-      </div>
-      <h1>Home</h1>
-      <a href="/profile/">My Profile</a>
-      <a href="/auth/login/">Login</a>
-      <a href="/auth/register/">Register</a>
-      <a href="/post/create/" class="button">Create post</a>
-      <button id="logout" class="button">Logout</button>
+      <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container-fluid">
+          <div class="logo-container me-3">
+            <a href="/" class="link-body-emphasis text-decoration-none">
+              <img id="logo" src="/assets/logo-light-text.png" alt="logo" />
+            </a>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Explore</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a href="/" class="nav-link link-body-emphasis active fs-5"
+                    >Posts</a
+                  >
+                </li>
+                <li class="nav-item dropdown fs-5">
+                  <a
+                    href="#"
+                    class="nav-link link-body-emphasis dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    id="user-name"
+                  >
+                    <img
+                      id="user-image"
+                      src=""
+                      alt="user"
+                      width="32"
+                      height="32"
+                      class="rounded-circle"
+                    />
+                  </a>
+                  <ul class="dropdown-menu text-small">
+                    <li>
+                      <a class="dropdown-item" href="/profile/">Profile</a>
+                    </li>
+                    <li>
+                      <a href="/post/create/" class="dropdown-item"
+                        >Create post</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <button id="logout" class="dropdown-item">Logout</button>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex mt-3 mt-lg-0 me-3" role="search">
+                <input
+                  type="search"
+                  class="form-control me-2"
+                  placeholder="Search..."
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-primary" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
-    <main>
-      <div id="posts-container"></div>
+    <main class="mt-5 pt-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div
+            id="posts-container"
+            class="col-12 col-md-10 col-lg-7 postfeed p-5"
+          >
+            <div id="loading-spinner" class="spinner"></div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+      >
+        <div class="form-check form-switch">
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="themeToggle"
+            autocomplete="off"
+          />
+          <label id="themeToggleLabel" class="btn btn-primary" for="themeToggle"
+            >Night</label
+          >
+        </div>
+      </div>
     </main>
+    <footer
+      class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+    >
+      <p class="col-md-4 mb-0 ms-3 text-body-secondary">
+        © 2024 Glowlink @maddipaddi
+      </p>
+    </footer>
   </body>
 </html>

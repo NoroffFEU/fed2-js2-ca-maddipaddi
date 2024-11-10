@@ -23,9 +23,9 @@ export const appendDeleteButton = (post, author) => {
 
   if (author === userName) {
     const deleteButton = document.createElement("button");
+    deleteButton.className = "btn btn-primary m-1";
     deleteButton.innerText = "Delete";
     deleteButton.setAttribute("id", `${post.id}`);
-    deleteButton.classList.add("button", "delete");
     deleteButton.addEventListener("click", onDeletePost);
 
     return deleteButton;

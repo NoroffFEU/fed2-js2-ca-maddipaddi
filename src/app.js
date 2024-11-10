@@ -1,4 +1,5 @@
 import "./scss/style.scss";
+import "bootstrap";
 
 import router from "./js/router";
 

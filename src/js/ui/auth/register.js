@@ -22,20 +22,6 @@ export async function onRegister(event) {
   const formData = new FormData(form);
   const account = Object.fromEntries(formData.entries());
 
-  const resetRegisterPage = () => {
-    const content = document.getElementById("register-page-content");
-    content.innerHTML = "";
-
-    displayMessage("You have registered an account!", "success");
-
-    const loginLink = document.createElement("a");
-    loginLink.setAttribute("href", "/auth/login/");
-    loginLink.classList.add("button");
-    loginLink.innerText = "Log in";
-
-    content.appendChild(loginLink);
-  };
-
   try {
     showSpinner();
     await register(account);
@@ -45,5 +31,6 @@ export async function onRegister(event) {
     hideSpinner();
   }
 
-  resetRegisterPage();
+  displayMessage("You have registered an account!", "success");
+  window.location.href = "/auth/";
 }

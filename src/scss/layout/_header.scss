@@ -1,0 +1,11 @@
+@import "/src/scss/common/variables";
+
+nav {
+  background-color: var(--bs-body-bg);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.active {
+  text-decoration: underline;
+}

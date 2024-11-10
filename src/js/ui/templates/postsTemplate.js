@@ -1,5 +1,6 @@
 import { appendDeleteButton } from "../../utilities/appendDeleteButton";
 import { appendEditLink } from "../../utilities/appendEditLink";
+import { formatTags } from "../../utilities/formatTags";
 
 /**
  * Creates an array of post elements from an array of post data.
@@ -19,40 +20,46 @@ import { appendEditLink } from "../../utilities/appendEditLink";
 export function postsTemplate(posts) {
   return posts.map((post) => {
     const postElement = document.createElement("div");
-    postElement.classList.add("post-element");
+    postElement.classList.add("card-body");
 
     const clickableThumbnail = document.createElement("a");
     clickableThumbnail.setAttribute("href", `/post/?id=${post.id}`);
 
     const user = document.createElement("p");
     user.innerText = `Posted by: ${post.author.name}`;
-    clickableThumbnail.appendChild(user);
 
     const title = document.createElement("h2");
     title.innerText = post.title;
+    title.classList.add("card-title");
 
     let mediaContainer;
 
     if (post.media && post.media.url) {
       mediaContainer = document.createElement("div");
+      mediaContainer.className = "image-container";
       const media = document.createElement("img");
       media.setAttribute("src", post.media.url);
       media.setAttribute("alt", post.media.alt || "Post image");
+      media.classList.add("card-img");
 
       mediaContainer.appendChild(media);
-      clickableThumbnail.appendChild(mediaContainer);
     }
 
-    const body = document.createElement("p");
-    body.innerText = post.body;
+    const tagsContainer = document.createElement("div");
+    tagsContainer.classList.add("tagsContainer");
+    const tags = post.tags;
+    const formattedTags = formatTags(tags);
 
-    const tags = document.createElement("p");
-    tags.innerText = post.tags;
+    formattedTags.forEach((tagElement) => {
+      tagsContainer.appendChild(tagElement);
+    });
 
-    clickableThumbnail.append(title, body, tags);
+    clickableThumbnail.append(title, mediaContainer);
 
     postElement.append(
+      user,
       clickableThumbnail,
+      tagsContainer,
       appendEditLink(post, post.author.name),
       appendDeleteButton(post, post.author.name)
     );
