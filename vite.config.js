@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   appType: "mpa",
-  base: "",
+  base: "/auth/",
   build: {
     target: "esnext",
     rollupOptions: {
