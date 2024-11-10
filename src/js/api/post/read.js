@@ -158,7 +158,7 @@ export async function readPostsByUser(
     );
     return sortedPosts;
   } catch (error) {
-    displayMessage(error.message, "error");
+    displayMessage(error.message, "alert-danger");
   } finally {
     hideSpinner();
   }
