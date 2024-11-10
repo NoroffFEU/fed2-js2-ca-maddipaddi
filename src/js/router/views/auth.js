@@ -1,5 +1,6 @@
 import { onRegister } from "../../ui/auth/register";
 import { onLogin } from "../../ui/auth/login";
+import { toggleTheme } from "../../ui/global/toggleTheme";
 
 function registerInit() {
   const form = document.forms.register;
@@ -14,3 +15,5 @@ function loginInit() {
 }
 
 loginInit();
+
+toggleTheme();

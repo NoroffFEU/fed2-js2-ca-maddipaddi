@@ -21,15 +21,15 @@ img {
 }
 
 .logo {
-  border: 1px solid $graphite-grey;
+  border: 1px solid var(--accent-color-4);
 }
 
 a {
-  color: $graphite-grey;
+  color: var(--text-color);
   text-decoration: none;
 }
 
 body {
-  background-color: $light-grey;
-  color: $graphite-grey;
+  background-color: var(--body-bg);
+  color: var(--text-color);
 }

@@ -12,7 +12,7 @@
         <div class="container-fluid">
           <div class="logo-container me-3">
             <a href="/" class="link-body-emphasis text-decoration-none">
-              <img src="../assets/logo-light-text.png" alt="logo-light" />
+              <img id="logo" src="/assets/logo-light-text.png" alt="logo" />
             </a>
           </div>
           <button
@@ -63,7 +63,7 @@
                 <li class="nav-item dropdown fs-5">
                   <a
                     href="#"
-                    class="nav-link dropdown-toggle"
+                    class="nav-link link-body-emphasis dropdown-toggle"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                     id="user-name"
@@ -100,7 +100,7 @@
                   placeholder="Search..."
                   aria-label="Search"
                 />
-                <button class="btn btn-light-theme-outline" type="submit">
+                <button class="btn btn-outline-primary" type="submit">
                   Search
                 </button>
               </form>
@@ -112,9 +112,24 @@
     <main class="mt-5 pt-5">
       <div class="container">
         <div class="row justify-content-center">
-          <div id="post-container" class="col-12 col-md-10 col-lg-8">
+          <div id="post-container" class="col-12 col-md-10 col-lg-6">
             <div id="loading-spinner" class="spinner"></div>
           </div>
+        </div>
+      </div>
+      <div
+        class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+      >
+        <div class="form-check form-switch">
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="themeToggle"
+            autocomplete="off"
+          />
+          <label id="themeToggleLabel" class="btn btn-primary" for="themeToggle"
+            >Night</label
+          >
         </div>
       </div>
     </main>

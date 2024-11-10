@@ -1,25 +1,12 @@
 @import "/src/scss/common/variables";
 
-.btn-light-theme-outline {
-  color: #000;
-  border: solid 1px $pale-blue-grey;
-
-  &:hover {
-    background-color: $pale-blue-grey;
-  }
-}
-
-.btn-light-theme {
-  color: #000;
-  background-color: $pale-blue-grey;
+.btn-primary {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition:
     box-shadow 0.3s ease,
     transform 0.3s ease;
 
   &:hover {
-    color: #000;
-    background-color: $cool-lavender;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
   }

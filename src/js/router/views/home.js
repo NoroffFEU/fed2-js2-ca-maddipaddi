@@ -3,8 +3,10 @@ import { renderPosts } from "../../ui/post/read";
 import { setLogoutListener } from "../../ui/global/logout";
 import { getUserPhoto } from "../../utilities/getUserPhoto";
 import { getUserName } from "../../utilities/getUserName";
+import { toggleTheme } from "../../ui/global/toggleTheme";
 
 function init() {
+  toggleTheme();
   authGuard();
   setLogoutListener();
   getUserName();

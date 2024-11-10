@@ -1,43 +1,124 @@
-// Light theme
+// Light Theme Variables
+$body-bg-light: #f2f2f2 !default;
+$text-color-light: #000 !default;
+$card-bg-light: #fafafa !default;
+$gradient-start-light: #eaeaea !default;
+$gradient-end-light: #acacac !default;
 
-// Background colors
-$light-grey: #f2f2f2 !default;
-$off-white: #fafafa !default;
-$gray-gradient-start: #eaeaea !default;
-$gray-gradient-end: #acacac !default;
+$accent-color-1-light: #a1b5d8 !default;
+$accent-color-2-light: #d9d9d9 !default;
+$accent-color-3-light: #b3e5e5 !default;
+$accent-color-4-light: #4a4a4a !default;
 
-// Accent colors
-$soft-steel-blue: #a1b5d8 !default;
-$brushed-silver: #d9d9d9 !default;
-$light-teal: #b3e5e5 !default;
-$graphite-grey: #4a4a4a !default;
+$highlight-color-1-light: #9abad9 !default;
+$highlight-color-2-light: #a8dadc !default;
+$highlight-color-3-light: #c5cae9 !default;
 
-// Highlight colors
-$pale-blue-grey: #9abad9 !default;
-$muted-turquoise: #a8dadc !default;
-$cool-lavender: #c5cae9 !default;
+$hover-bg-color-light: #fff !default;
+$hover-color-light: #000 !default;
 
-// Dark theme
+[data-bs-theme="light"] {
+  --bs-body-bg: #{$body-bg-light};
+  --bs-body-color: #{$text-color-light};
 
-// Background colors
-$deep-charcoal: #1c1c1c !default;
-$dark-navy: #0d1b2a !default;
-$charcoal-gradient-start: #1a1a1a !default;
-$charcoal-gradient-end: #1c1c1c !default;
+  --bs-postfeed-bg: #{$accent-color-2-light};
 
-// Accent colors
-$neon-cyan: #00f5ff !default;
-$electric-blue: #3a86ff !default;
-$purple: #9d4edd !default;
-$magenta: #ff007f !default;
+  --bs-card-bg: #{$card-bg-light};
+  --bs-hover-bg: #{$hover-bg-color-light};
 
-// Highlight colors
-$neon-green: #39ff14 !default;
-$electric-pink: #ff48c4 !default;
-$bright-yellow: #ffdd33 !default;
-$neon-purple: #bc13fe !default;
+  --bs-btn-bg: #{$highlight-color-1-light};
+  --bs-btn-color: #{$text-color-light};
 
-//Box shadows
+  --bs-tags-bg: #{$accent-color-1-light};
+
+  .btn-primary {
+    --bs-btn-bg: #{$highlight-color-1-light};
+    --bs-btn-border-color: #{$highlight-color-1-light};
+    --bs-btn-color: #{$text-color-light};
+
+    --bs-btn-hover-bg: #{$highlight-color-3-light};
+    --bs-btn-hover-color: #{$text-color-light};
+    --bs-btn-hover-border-color: #{$highlight-color-3-light};
+
+    --bs-btn-active-color: #{$text-color-light};
+    --bs-btn-active-bg: #{$highlight-color-1-light};
+    --bs-btn-active-border-color: #{$highlight-color-1-light};
+  }
+
+  .btn-outline-primary {
+    --bs-btn-border-color: #{$highlight-color-1-light};
+    --bs-btn-color: #{$text-color-light};
+
+    --bs-btn-hover-bg: #{$highlight-color-1-light};
+    --bs-btn-hover-color: #{$text-color-light};
+    --bs-btn-hover-border-color: #{$highlight-color-1-light};
+
+    --bs-btn-active-color: #{$text-color-light};
+    --bs-btn-active-bg: #{$highlight-color-1-light};
+    --bs-btn-active-border-color: #{$highlight-color-1-light};
+  }
+}
+
+// Dark Theme Variables
+$body-bg-dark: #1c1c1c;
+$text-color-dark: #fff;
+$card-bg-dark: #0d1b2a !default;
+$gradient-start-dark: #1a1a1a !default;
+$gradient-end-dark: #1c1c1c !default;
+
+$accent-color-1-dark: #ffdd33 !default;
+$accent-color-2-dark: #161616 !default;
+$accent-color-3-dark: #3a86ff !default;
+$accent-color-4-dark: #ff007f !default;
+$accent-color-5-dark: #00f5ff !default;
+
+$highlight-color-1-dark: #ff48c4 !default;
+$highlight-color-2-dark: #9d4edd !default;
+$highlight-color-3-dark: #bc13fe !default;
+
+$hover-bg-color-dark: #1f252c !default;
+$hover-color-dark: #fff !default;
+
+[data-bs-theme="dark"] {
+  --bs-body-bg: #{$body-bg-dark};
+  --bs-body-color: #{$text-color-dark};
+
+  --bs-postfeed-bg: #{$accent-color-2-dark};
+
+  --bs-card-bg: #{$gradient-start-dark};
+  --bs-hover-bg: #{$hover-bg-color-dark};
+
+  --bs-tags-bg: #{$accent-color-1-dark};
+
+  .btn-primary {
+    --bs-btn-bg: #{$highlight-color-1-dark};
+    --bs-btn-border-color: #{$highlight-color-1-dark};
+    --bs-btn-color: #{$text-color-dark};
+
+    --bs-btn-hover-bg: #{$accent-color-4-dark};
+    --bs-btn-hover-color: #{$text-color-dark};
+    --bs-btn-hover-border-color: #{$accent-color-4-dark};
+
+    --bs-btn-active-color: #{$text-color-dark};
+    --bs-btn-active-bg: #{$highlight-color-1-dark};
+    --bs-btn-active-border-color: #{$highlight-color-1-dark};
+  }
+
+  .btn-outline-primary {
+    --bs-btn-border-color: #{$highlight-color-1-dark};
+    --bs-btn-color: #{$text-color-dark};
+
+    --bs-btn-hover-bg: #{$highlight-color-1-dark};
+    --bs-btn-hover-color: #{$text-color-dark};
+    --bs-btn-hover-border-color: #{$highlight-color-1-dark};
+
+    --bs-btn-active-color: #{$text-color-dark};
+    --bs-btn-active-bg: #{$highlight-color-1-dark};
+    --bs-btn-active-border-color: #{$highlight-color-1-dark};
+  }
+}
+
+// Shadows
 
 $box-shadow-card-elements:
   inset 0 -2px 5px rgba(0, 0, 0, 0.1),

@@ -3,7 +3,8 @@
 .card-custom {
   @extend .card;
 
-  background-color: $off-white;
+  background-color: var(--bs-card-bg);
+  color: var(--text-color);
   box-shadow: $box-shadow-card-elements;
   border-radius: 0.25rem;
   transition: all 0.3s ease-in-out;
@@ -13,7 +14,7 @@
   height: 100%;
 
   &:hover {
-    background-color: #fff;
+    background-color: var(--bs-hover-bg);
     box-shadow:
       inset 0 -2px 5px rgba(0, 0, 0, 0.1),
       0 4px 8px rgba(0, 0, 0, 0.2);

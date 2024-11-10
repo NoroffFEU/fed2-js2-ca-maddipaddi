@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,11 @@
         <div class="container-fluid">
           <div class="logo-container me-3">
             <a href="/" class="link-body-emphasis text-decoration-none">
-              <img src="assets/logo-light-text.png" alt="logo-light" />
+              <img
+                id="logo"
+                src="/assets/logo-light-text.png"
+                alt="logo-light"
+              />
             </a>
           </div>
           <button
@@ -65,7 +69,7 @@
                 <li class="nav-item dropdown fs-5">
                   <a
                     href="#"
-                    class="nav-link dropdown-toggle"
+                    class="nav-link link-body-emphasis dropdown-toggle"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                     id="user-name"
@@ -102,7 +106,7 @@
                   placeholder="Search..."
                   aria-label="Search"
                 />
-                <button class="btn btn-light-theme-outline" type="submit">
+                <button class="btn btn-outline-primary" type="submit">
                   Search
                 </button>
               </form>
@@ -116,10 +120,25 @@
         <div class="row justify-content-center">
           <div
             id="posts-container"
-            class="col-12 col-md-10 col-lg-8 postfeed p-5"
+            class="col-12 col-md-10 col-lg-7 postfeed p-5"
           >
             <div id="loading-spinner" class="spinner"></div>
           </div>
+        </div>
+      </div>
+      <div
+        class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+      >
+        <div class="form-check form-switch">
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="themeToggle"
+            autocomplete="off"
+          />
+          <label id="themeToggleLabel" class="btn btn-primary" for="themeToggle"
+            >Night</label
+          >
         </div>
       </div>
     </main>

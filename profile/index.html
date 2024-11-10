@@ -13,7 +13,7 @@
         <div class="container-fluid">
           <div class="logo-container me-3">
             <a href="/" class="link-body-emphasis text-decoration-none">
-              <img src="../assets/logo-light-text.png" alt="logo-light" />
+              <img id="logo" src="/assets/logo-light-text.png" alt="logo" />
             </a>
           </div>
           <button
@@ -64,7 +64,7 @@
                 <li class="nav-item dropdown fs-5">
                   <a
                     href="#"
-                    class="nav-link dropdown-toggle"
+                    class="nav-link link-body-emphasis dropdown-toggle"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                     id="user-name"
@@ -101,7 +101,7 @@
                   placeholder="Search..."
                   aria-label="Search"
                 />
-                <button class="btn btn-light-theme-outline" type="submit">
+                <button class="btn btn-outline-primary" type="submit">
                   Search
                 </button>
               </form>
@@ -130,10 +130,10 @@
           <div class="d-inline-flex gap-2 mb-5"></div>
           <a
             href="/post/create/"
-            class="d-inline-flex align-items-center btn btn-light-theme btn-lg px-4 m-1"
+            class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 m-1"
             >Create post</a
           >
-          <button class="btn btn-light-theme btn-lg px-4 m-1">
+          <button class="btn btn-primary btn-lg px-4 m-1">
             Update Profile
           </button>
         </div>
@@ -144,6 +144,21 @@
             id="user-posts"
             class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2"
           ></div>
+        </div>
+      </div>
+      <div
+        class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+      >
+        <div class="form-check form-switch">
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="themeToggle"
+            autocomplete="off"
+          />
+          <label id="themeToggleLabel" class="btn btn-primary" for="themeToggle"
+            >Night</label
+          >
         </div>
       </div>
     </main>

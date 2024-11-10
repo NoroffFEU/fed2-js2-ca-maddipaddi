@@ -12,7 +12,7 @@
         <div class="container-fluid">
           <div class="logo-container me-3">
             <a href="/" class="link-body-emphasis text-decoration-none">
-              <img src="../assets/logo-light-text.png" alt="logo-light" />
+              <img id="logo" src="/assets/logo-light-text.png" alt="logo" />
             </a>
           </div>
         </div>
@@ -22,14 +22,7 @@
       <div id="loading-spinner" class="spinner"></div>
       <div class="card-custom">
         <div class="px-4 py-5 my-5 text-center">
-          <img
-            class="d-block mx-auto mb-4 logo"
-            src="../assets/logo-light.png"
-            alt="Glowlink's logo"
-            width="72"
-            height="57"
-          />
-          <h1 class="display-5 fw-bold text-body-emphasis">
+          <h1 class="display-5 fw-bold">
             Log in or register to enter the social city
             <span class="text-uppercase logo-text-light"
               >Glo<span class="fst-italic">w</span>link</span
@@ -45,7 +38,7 @@
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
               <button
                 type="button"
-                class="btn btn-light-theme btn-lg px-4 gap-3"
+                class="btn btn-primary btn-lg px-4 gap-3"
                 data-bs-toggle="modal"
                 data-bs-target="#loginModal"
               >
@@ -53,7 +46,7 @@
               </button>
               <button
                 type="button"
-                class="btn btn-light-theme-outline btn-lg px-4"
+                class="btn btn-outline-primary btn-lg px-4"
                 data-bs-toggle="modal"
                 data-bs-target="#registerModal"
               >
@@ -105,7 +98,7 @@
                   />
                 </div>
 
-                <button class="btn btn-light-theme align-self-center mt-3">
+                <button class="btn btn-primary align-self-center mt-3">
                   Login
                 </button>
               </form>
@@ -184,7 +177,7 @@
                     />
                   </div>
 
-                  <button class="btn btn-light-theme align-self-center mt-3">
+                  <button class="btn btn-primary align-self-center mt-3">
                     Register
                   </button>
                 </form>
@@ -200,6 +193,21 @@
               </button>
             </div>
           </div>
+        </div>
+      </div>
+      <div
+        class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+      >
+        <div class="form-check form-switch">
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="themeToggle"
+            autocomplete="off"
+          />
+          <label id="themeToggleLabel" class="btn btn-primary" for="themeToggle"
+            >Night</label
+          >
         </div>
       </div>
     </main>
